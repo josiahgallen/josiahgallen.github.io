@@ -1,4 +1,17 @@
- 
+ body { 
+ 	text-align: center;
+ 	background-image: url('../images/footer_lodyas.png');
+ 	color: #3DBADF;
+ }
 #headshot {
 	height: 10em;
+}
+
+img {
+	height: 20em;
+}
+
+.card-content {
+	color: black;
+	text-align: left;
 }
