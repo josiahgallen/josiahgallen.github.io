@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Iron Alum</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./node_modules/materialize-css/bin/materialize.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="./styles/main.sass.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+     <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+       	 <a href=""  id="home"><img class="brand-logo" src="./images/iron-yard-logo-sm.png"><span class="logoTxt">Alumni</span></a>
+        <ul class="right">
+          <li><a href="students" id="view-all">View All TIY Students</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+ 	<!--  homepage -->
+ 	<div class="heroImg">
+ 		    <h3 class="heroTxt"> Connecting Employers to Alumni </h3>
+ 	</div>
+ 	<div class="row" id="hpCards">
+        <div class="col s12 m6">
+          <div class="z-depth-5 card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Employers</span>
+              <p>Our proven career support program and relationships with companies mean our graduates find amazing work. </p>
+            </div>
+            <div class="card-action">
+              <a href="#searchStudents">Find your next employee ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="z-depth-5 card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Alumni</span>
+              <p>Whether you’re looking to join a startup, work at an agency, or get just stay in touch.</p>
+            </div>
+            <div class="card-action">
+              <a href="#addProfile">Create a profile ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+	<!-- Employer search page -->
+    <form id="searchForm">
+        <div class="input-field col s12">
+            <select id="locationSearch">
+                <option value="" disabled selected>Select Location:</option>
+                <option value="Austin">Austin</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Houston">Houston</option>
+            </select>
+        </div>
+        <div>
+            <select id="courseSearch">
+                <option value="" disabled selected>Select Class:</option>
+                <option value="Backend">Back End Engineering</option>
+                <option value="Frontend">Front End Engineering</option>
+                <option value="Design">Design</option>
+            </select>
+        </div>
+        <div class="button-wrap" id="searchButton">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Search
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+    <!-- End of landing page -->
+   <!--  Start of Profile Creation Page -->
+	<div class="row" id="formID">
+		<form id="createProfile" class="col s12">
+			<div class="row">
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">account_circle</i>
+					<input id="f_name" type="text" class="validate" placeholder="First Name">
+				</div>
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">account_circle</i>
+					<input id="l_name" type="text" class="validate" placeholder="Last Name">
+				</div>
+				<div class="input-field col s12">
+					<i class="cityIcon material-icons prefix">room</i>
+					<select id="cohortSelect">
+						<option value="" disabled selected>Select your city and course</option>
+						<option value="1">Austin - Front End</option>
+						<option value="2">Austin - Back End</option>
+						<option value="3">Austin - Design</option>
+						<option value="4">Dallas - Front End</option>
+						<option value="5">Dallas - Back End</option>
+						<option value="6">Dallas - Design</option>
+						<option value="7">Houston - Front End</option>
+						<option value="8">Houston - Back End</option>
+						<option value="9">Houston - Design</option>
+					</select>
+				</div>
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">email</i>
+					<input id="email" type="email" class="validate" placeholder="Email">
+				</div>
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">label_outline</i>
+					<input id="linked_in" type="text" class="validate" placeholder="Linked In">
+				</div>
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">label_outline</i>
+					<input id="github" type="text" class="validate" placeholder="Github">
+				</div>
+				<div class="input-field col s12 m6">
+				<i class="cityIcon material-icons prefix">work</i>
+	            	<select id="employed">
+		                <option value="" disabled selected>Employed?</option>
+		                <option value="true">Yes</option>
+		                <option value="false">No</option>
+	            	</select>
+        		</div>
+				<div class="input-field col s12">
+					<i class="material-icons prefix">perm_identity</i>
+					<textarea id="bio" class="materialize-textarea" placeholder="Bio"></textarea>
+				</div>
+			</div>
+			<div class="button-wrap" id="createPbutton">
+	            <button class="btn waves-effect waves-light" type="submit" name="action" href="#students/<%= id %>">Create Profile
+	                <i class="material-icons right">send</i>
+	            </button>
+        </div>
+		</form>
+	</div>
+    <!-- Student List Page -->
+    <div class="container">
+    	<div class="row">
+    		<div id="student-list"></div> 	
+    	</div>   
+    </div>
+    <div id="student-list"></div>
+    <div id="profile-page"></div>
+  <!--   footer -->
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">The Iron Yard Alumni</h5>
+              
+              <ul>
+                  <li><a class="grey-text text-lighten-3" href="http://theironyard.com/courses/" target="_blank">Courses</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://theironyard.com/locations" target="_blank">Locations</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://theironyard.com/stories" target="_blank">Stories</a></li>
+                </ul>
+             </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 A Josiah Mike Leslie Joint
+            </div>
+          </div>
+        </footer>
+    <script type="text/javascript" src="./scripts/bundle.js"></script>
+
+
+    <!-- Profile template -->
+    <script type="text/template" id="student-row">
+             <div class="card grey lighten-5 col s12 m4">
+        <%= f_name %>
+            <%= l_name %>
+                </br>
+                <span>
+                    <img class="circle responsive-img" id="listImg" src="images/empty_profile.png">
+                    </span>
+                    <a href="#students/<%= id %>">View Profile</a>
+                    </div>
+    </script>
+    <script type="text/template" id="profile-view">
+    	<h3 class="heroTxt why">
+	        <%= f_name %>
+	        <%= l_name %>
+	        <br/>
+	        <img class="circle responsive-img" id="profileImg" src="images/empty_profile.png">
+        </h3>
+        <div class="container">
+        	<div class=" about">
+			  <h5>let me introduce myself</h5>
+			 </div>
+		  <hr>
+  		<div class="row">
+    	<div class="col s12 m6 l6">
+      		<h6>Story</h6>
+      		<p><%= bio %></p>
+    	</div>
+    	<div class="col s12 m6 l6">
+      		<h6>Contact</h6>
+      	<div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <p>If you are interested in contacting me, please use the email below or check out my Linked In and Git Hub links</p>
+          <%= email %>
+        </div>
+        <div class="card-action">
+          <a href="#"><%= linked_in %></a>
+          <a href='#'><%= github %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+
+</body>
+
+</html>

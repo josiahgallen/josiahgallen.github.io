@@ -1,0 +1,104 @@
+
+
+body{
+	background-color:#E3E7E9;
+
+}
+
+
+nav {
+	background-color: #39474E;
+	height: 5em;
+	width:100%;
+	.logoWrap{
+		width:100%;
+	}
+	.brand-logo{
+		    overflow: hidden;
+    		height: calc(100%);
+    		left: 8%;
+	}
+	.logoTxt{
+		position:absolute;
+		left:17%;
+		font-family: 'Alex Brush', cursive;
+		font-size:3em;
+		top:5px;
+	}
+	
+
+}
+.heroImg{ 
+   position: relative;
+   height: 26em;
+   background: url("../images/home-hero-new.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   opacity: 0.6;
+
+}
+
+
+.heroTxt { 
+   position: absolute; 
+   top: 20%; 
+   left: 0; 
+   width: 100%; 
+   text-align:center;
+   color: white;
+   text-shadow: 2px 1px 2px black; 
+
+}
+.card-content{
+	min-height: 150px;
+}
+form{
+	display:none;
+	select{
+		width: 75%;
+		margin: 1em auto;
+		display: none;
+	}
+	.button-wrap{
+		text-align: center;
+		display:none;
+	}
+
+}
+.row .col {
+	padding: 1em;
+	.s12 {
+		width: 95%;
+    margin-left: 10px;
+}
+}
+#profileImg{
+	height:2em;
+	margin-top:1em;
+}
+#listImg{
+	height:2em;
+	float:right;
+	position: relative;
+	bottom:1em;
+}
+.about{
+	text-align:center;
+}
+.cityIcon{
+	margin-top:.75em;
+}
+
+footer.page-footer {
+	background-color: #39474E;
+}
+
+// medium
+@media only screen and (min-width: 601px){
+	.row .col.offset-m1 {
+	    margin-left: 10.33333%;
+	}
+	nav .logoTxt{
+		left:15%;
+	}
+}
