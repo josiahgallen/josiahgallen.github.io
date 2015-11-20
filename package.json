@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "jquery": "^2.1.4",
-    "materialize": "^1.0.0"
+    "materialize": "^1.0.0",
+    "materialize-css": "^0.97.3"
   }
 }
